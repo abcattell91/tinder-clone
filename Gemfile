@@ -25,8 +25,17 @@ gem 'webpacker', '~> 5.0'
 
 gem "devise"
 
+
+
+# image uploads to Amazon S3
+gem "aws-sdk-s3", require: false
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+# Fake seed information
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
