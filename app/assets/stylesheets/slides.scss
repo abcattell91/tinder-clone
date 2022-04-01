@@ -15,10 +15,7 @@
   opacity: 0;
   z-index: 1;
 
-  font-size: 40px;
-  padding: 40px;
   box-sizing: border-box;
-  background: #333;
   color: #fff;
 
   -webkit-transition: opacity 1s;
@@ -36,10 +33,30 @@
   margin-top: 20px;
   width: 100%;
   text-align: center;
+    span {
+      margin: 0 10px;
+  }
 }
 
-#slide-controls span {
-  margin: 0 10px;
+.user-details {
+  font-size: 18px;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+  text-align: left;
+}
+
+.user-name {
+  font-size: 28px;
+}
+.image-carousel {
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+  background-size:  cover;
+  background-repeat: no-repeat;
 }
 
 // .slide:nth-of-type(1) {
