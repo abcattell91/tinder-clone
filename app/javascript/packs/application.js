@@ -16,4 +16,5 @@ require('bootstrap')
 require('fontawesome-free/css/all.css')
 
 
-require('../includes/slides')
+require('../includes/browse')
+//require('../includes/matches')

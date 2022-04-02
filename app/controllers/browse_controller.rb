@@ -1,7 +1,15 @@
 class BrowseController < ApplicationController
 
   def browse
-    @users = Account.where.not(id: current_account.id)
+    liked_account_ids = Like.where(account_id: current_account.id).map(&:liked_account_id)
+    liked_account_ids << current_account.id
+
+    @users = Account.where.not(id: liked_account_ids)
+    @matches = current_account.matches
+  end
+
+  def matches
+    @matches = current_account.matches
   end
 
   def approve
