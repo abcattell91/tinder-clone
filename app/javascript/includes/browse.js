@@ -29,7 +29,7 @@ $("#approve").on("click", function(){
     } else {
       console.log(action);
     }
-  }
+
 
 
     $activeSlide.addClass("showing");
