@@ -1,0 +1,25 @@
+<div id="conversation">
+  <div class="row">
+    <div class="col-12 top-bar">
+      <%= link_to image_tag(@users.first.image.first, width: "40px", height: "40px", class: "float-start profile-thumb rounded-circle me-3"), "#" %>
+      <span><%= @users.first.first_name %></span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center">
+      <p class="mt-3">You matched with <span><%= @users.first.first_name %></span> <%= time_ago_in_words @users.first.created_at %> ago.</p>
+      <%= link_to image_tag(@users.first.image.first, width: "200px", height: "200px", class: "profile-thumb rounded-circle mb-5 mt-2"), "#" %>
+      <p>Send them a message and make them smile 😎</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form>
+        <div class="form-group">
+          <input type="text" value="" placeholder="Enter your message and press send" class="form-control">
+          <input type="submit" name="submit" value="send" class="btn btn-success">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
