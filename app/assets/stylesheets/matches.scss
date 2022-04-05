@@ -20,6 +20,7 @@
 
 
 #conversation {
+  display: none;
   width: 64%;
   height: 96%;
   position: absolute;
@@ -42,12 +43,12 @@
     padding-top: 40px;
     margin-top:  30px;
   }
+}
 
-  .close-conversation {
-    cursor: pointer;
+#close-conversation {
+  cursor: pointer;
 
-    &:hover {
-      color: rgba(0, 0, 0, 0.484) !important
-    }
+  &:hover {
+    color: rgba(0, 0, 0, 0.484) !important
   }
 }
