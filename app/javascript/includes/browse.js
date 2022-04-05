@@ -13,7 +13,7 @@ $(".match-tile").on("click", function(){
 
 });
 
-$(".close-conversation").on("click", function(){
+$("#close-conversation").on("click", function(){
   $("#conversation").hide();
 });
 
