@@ -34,4 +34,19 @@ class BrowseController < ApplicationController
   def decline
     # user swipes left
   end
+
+  def conversation
+    id = params[:id]
+    @profile = Account.find(id)
+
+    if @profile.present?
+      # get conversation entries for this user
+
+      respond_to do |format|
+        format.js {
+          render "browse/conversation"
+        }
+      end
+    end
+  end
 end
