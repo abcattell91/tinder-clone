@@ -1,22 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+require "open-uri"
 
-Account.create([
-  { first_name: "Andy", last_name: "try", username: "andtry", email: "example@example.com", password: "password" },
-  { first_name: "Trish", last_name: "to", username: "mouse", email: "1example@example.com", password: "password" },
-  { first_name: "Fred", last_name: "think", username: "blind", email: "2example@example.com", password: "password" },
-  { first_name: "Paul", last_name: "cat", username: "headphone", email: "3example@example.com", password: "password" },
-  { first_name: "Jackie", last_name: "fad", username: "ipad", email: "4example@example.com", password: "password" },
-  { first_name: "Andria", last_name: "tea", username: "speaker", email: "5example@example.com", password: "password" },
-  { first_name: "Felix", last_name: "das", username: "laptop", email: "6example@example.com", password: "password" },
-  { first_name: "Ruby", last_name: "tree", username: "alligator", email: "7example@example.com", password: "password" },
-  { first_name: "Hailey", last_name: "log", username: "goat", email: "8example@example.com", password: "password" },
-  { first_name: "Wally", last_name: "dog", username: "fish", email: "9example@example.com", password: "password" },
-  { first_name: "Poppy", last_name: "frank", username: "dog", email: "10example@example.com", password: "password" },
-  { first_name: "Jenny", last_name: "lewl", username: "cat", email: "11example@example.com", password: "password" },
- ])
+puts "Cleaning up database..."
+Account.delete_all
+
+puts "Database cleaned"
+
+puts 'Creating Users...'
+
+user1 = Account.create (first_name: "",
+                        last_name: "try",
+                        username: "andtry",
+                        email: "example@example.com",
+                        password: "password"
+                      )
+
+puts 'Creating Boats...'
+
+file = URI.open('https://tinyurl.com/23vsvy33')
+file2 = URI.open('https://tinyurl.com/3rxatv8n')
+file3 = URI.open('https://tinyurl.com/ycytfv8d')
+
+
+boat1 = Boat.create!(
+  name: Faker::Name.name,
+  docked: Faker::Boolean.boolean,
+  address: Faker::Address.street_address,
+  boat_type: ["Bracera", "Banana-Boat", "Barge", "Dinghy", "Pedalo", "Punt", "Yacht", "Ship", "Catamaran", "Hovercraft"].sample,
+  price: rand(50..999),
+  guests: rand(1..100),
+)
+boat1.photos.attach(io: file, filename: 'boat1.jpeg', content_type: 'image/jpg')
+boat1.photos.attach(io: file2, filename: 'boat2.jpeg', content_type: 'image/jpg')
+boat1.photos.attach(io: file3, filename: 'boat3.jpeg', content_type: 'image/jpg')

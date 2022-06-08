@@ -32,12 +32,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image, multiple: true %>
+    <%= f.label :images %>
+    <%= f.file_field :images, multiple: true %>
   </div>
 
-  <% if resource.image.attached? %>
-    <% resource.image.each do |image| %>
+  <% if resource.images.attached? %>
+    <% resource.images.each do |image| %>
       <%=image_tag image, width: "200px" %>
     <% end %>
   <% end %>

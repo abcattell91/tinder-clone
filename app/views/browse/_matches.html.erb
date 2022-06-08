@@ -1,7 +1,7 @@
 <% @matches.each do |match| %>
   <div class="col-sm-4 m-3">
-    <% if match.image.attached? %>
-    <div class="match-tile" data-id="<%= match.id %>" style="background-image: url('<%= url_for match.image.first %>')">
+    <% if match.images.attached? %>
+    <div class="match-tile" data-id="<%= match.id %>" style="background-image: url('<%= url_for match.images.first %>')">
     <p class="img-text"> <%= match.first_name %></p>
     </div>
   <% end %>
